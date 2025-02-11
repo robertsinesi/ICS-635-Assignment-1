@@ -190,7 +190,7 @@ for i, max_d in enumerate(max_depth_values):
         temp_accuracies = []
 
         # Repeat the evaluation multiple times for stability
-        num_repeats = 50
+        num_repeats = 1#Increased for report
         for _ in range(num_repeats):
             accuracy = forest_m(X_train, X_test, y_train, y_test, 100, max_d, min_samp_sp)[0]
             temp_accuracies.append(accuracy)
@@ -206,5 +206,5 @@ plt.colorbar(contour, label="Accuracy")
 plt.xlabel("Min Samples Split")
 plt.ylabel("Max Depth")
 plt.title("Random Forest Performance (Accuracy)")
-plt.savefig("Random Forest Contour Plot")
+#plt.savefig("Random Forest Contour Plot")#Saved for report
 plt.show()
